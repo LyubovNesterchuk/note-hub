@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import { api } from '../../api';
 import { cookies } from 'next/headers';
 import { isAxiosError } from 'axios';
+
 import { logErrorResponse } from '../../_utils/utils';
+import { api } from '../../api';
 
 
 export async function POST() {

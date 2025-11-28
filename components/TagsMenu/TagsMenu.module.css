@@ -3,31 +3,34 @@
   display: inline-block;
 }
 
-.menuButton {
-  background-color: #f5f5f5;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
+.menuBtn {
+  background-color: #f4e4c1;
+  color: #2c1810;
+  border: 2px solid #8b6f47;
+  padding: 8px 20px;
   font-size: 16px;
-  border-radius: 8px;
+  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0px #6b5639;
 }
 
-.menuButton:hover {
-  background-color: #eaeaea;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.menuBtn:hover {
+  background-color: #f9ecd3;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #6b5639;
 }
 
-.menuList {
+.menu {
   position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  background-color: #333;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 6px 0;
+  top: calc(100% + 12px);
+  right: 0;
+  background-color: #3d2817;
+  border: 2px solid #8b6f47;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  padding: 8px 0;
   margin: 0;
   list-style: none;
   min-width: 180px;
@@ -40,14 +43,19 @@
 
 .menuLink {
   display: block;
-  padding: 8px 16px;
-  color: #f0f0f0;
+  padding: 12px 20px;
+  color: #f4e4c1;
   text-decoration: none;
   font-size: 15px;
-  transition: background-color 0.2s ease;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .menuLink:hover {
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: #5d3a24;
+  color: #ffeec9;
+}
+
+.menuItem:first-child .menuLink {
+  padding-bottom: 12px;
 }

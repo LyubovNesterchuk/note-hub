@@ -8,14 +8,14 @@ import axios from "axios";
 
 
 
-// ---------------2
+// ---------------2 ++
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL + "/api";
+// const baseURL = process.env.NEXT_PUBLIC_API_URL + "/api";
 
-export const nextServer = axios.create({
-  baseURL: baseURL,
-  withCredentials: true,
-});
+// export const nextServer = axios.create({
+//   baseURL: baseURL,
+//   withCredentials: true,
+// });
 
 
 // ----------------1
@@ -24,3 +24,12 @@ export const nextServer = axios.create({
 //   baseURL: 'http://localhost:3000/api',
 //   withCredentials: true, 
 // });
+
+
+
+const baseURL = process.env.NEXT_PUBLIC_API_URL + "/api";;
+
+export const nextServer = axios.create({
+  baseURL: baseURL,
+  withCredentials: true,
+});

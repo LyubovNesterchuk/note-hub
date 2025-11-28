@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  font-weight: 500;
-  color: #212529;
+  font-weight: 600;
+  color: #2c1810;
 }
 
 .input,
@@ -18,9 +18,19 @@
   margin-top: 4px;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  border: 2px solid #8b6f47;
+  border-radius: 0;
+  background-color: #ffffff;
   resize: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: #5d3a24;
+  box-shadow: 2px 2px 0px rgba(93, 58, 36, 0.3);
 }
 
 .actions {
@@ -32,40 +42,51 @@
 .submitButton {
   padding: 8px 16px;
   font-size: 16px;
-  background-color: #0d6efd;
-  color: #fff;
-  border: none;
+  background-color: #8b4513;
+  color: #f4e4c1;
+  border: 2px solid #6b3410;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .submitButton:hover {
-  background-color: #0b5ed7;
+  background-color: #a0522d;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .submitButton:disabled {
-  background-color: #6c757d;
+  background-color: #a89079;
   cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
 }
 
 .cancelButton {
   padding: 8px 16px;
   font-size: 16px;
-  background-color: #f8f9fa;
-  color: #212529;
-  border: 1px solid #ced4da;
+  background-color: #f4e4c1;
+  color: #2c1810;
+  border: 2px solid #8b6f47;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .cancelButton:hover {
-  background-color: #e2e6ea;
+  background-color: #f9ecd3;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .error {
-  color: #dc3545;
+  color: #8b2500;
   font-size: 12px;
   margin-top: 4px;
+  font-weight: 600;
 }

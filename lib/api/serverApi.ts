@@ -88,18 +88,3 @@ export const updateServerMe = async (payload: Partial<User>): Promise<User> => {
 };
 
 
-
-
-
-// export const getServerMe = async (): Promise<User> => {
-
-//   const cookieStore = await cookies();
-
-//   const { data } = await nextServer.get('/auth/me', {
-//     headers: {
-//       Cookie: cookieStore.toString(),
-//     },
-//   });
-
-//   return data;
-// };

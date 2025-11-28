@@ -1,5 +1,7 @@
+
 .main {
   flex: 1;
+  background-color: #f4e4c1;
 }
 
 .container {
@@ -12,14 +14,43 @@
 .title {
   font-size: 36px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #2c1810;
   margin-bottom: 60px;
   text-align: center;
+  text-shadow: 3px 3px 0px rgba(139, 111, 71, 0.3);
+  letter-spacing: 1px;
 }
 
 .description {
   font-size: 18px;
-  color: #444444;
+  color: #3d2817;
   line-height: 28px;
   margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.notFoundTitle {
+  font-size: 72px;
+  font-weight: 700;
+  color: #8b4513;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 0px rgba(139, 111, 71, 0.3);
+  letter-spacing: 2px;
+}
+
+.notFoundDescription {
+  font-size: 20px;
+  color: #5d3a24;
+  font-weight: 500;
+  max-width: 500px;
 }

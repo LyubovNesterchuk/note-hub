@@ -82,11 +82,11 @@ type CheckSessionRequest = {
   success: boolean;
 };
 
+
 export const checkSession = async () => {
   const res = await nextServer.get<CheckSessionRequest>('/auth/session');
   return res.data.success;
 };
-
 
 
 export const getMe = async () => {
@@ -99,7 +99,6 @@ export const getMe = async () => {
 export const logout = async (): Promise<void> => {
   await nextServer.post("/auth/logout");
 };
-
 
 
 export type UpdateUserRequest = {
@@ -115,19 +114,15 @@ export const updateMe = async (payload: UpdateUserRequest): Promise<User> => {
 
 
 
-// export type UpdateUserRequest = {
-//   userName?: string;
-//   photoUrl?: string;
-// };
+export const uploadAvatar = async (file: File): Promise<string> => {
+  const formData = new FormData();
+  formData.append("avatar", file); // ВАЖЛИВО: той самий ключ, що в upload.single("avatar")
 
-// export const updateMe = async (payload: UpdateUserRequest) => {
-//   const res = await nextServer.put<User>('/auth/me', payload);
-//   return res.data;
-// };
+  const { data } = await nextServer.patch<{ url: string }>("/users/me/avatar", formData, {
+    headers: {
+      // НЕ ставимо manually Content-Type, браузер сам проставить boundary для multipart/form-data
+    },
+  });
 
-// export const uploadImage = async (file: File): Promise<string> => {
-//   const formData = new FormData();
-//   formData.append('file', file);
-//   const { data } = await nextServer.post('/upload', formData);
-//   return data.url;
-// };
+  return data.url; // це буде user.avatar з бекенда
+};

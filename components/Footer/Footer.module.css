@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   padding: 20px;
   background-color: #f0f0f0;
   text-align: center;
@@ -21,4 +21,33 @@
 
 .footer a:hover {
   text-decoration: underline;
+} */
+
+.footer {
+  padding: 20px;
+  background-color: #d4a574;
+  text-align: center;
+  font-size: 14px;
+  color: #2c1810;
+  border-top: 3px solid #8b6f47;
+  box-shadow: 0 -4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer a {
+  color: #5d3a24;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.footer a:hover {
+  color: #2c1810;
+  border-bottom: 2px solid #2c1810;
 }

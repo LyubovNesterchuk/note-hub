@@ -3,8 +3,8 @@ import { cookies } from 'next/headers';
 import { parse } from 'cookie';
 import { checkServerSession } from './lib/api/serverApi';
 
-const privateRoutes = ['/profile', '/notes/:path*', '/notes/filter/:path*'];
 const publicRoutes = ['/sign-in', '/sign-up'];
+const privateRoutes = ['/profile', '/notes/:path*', '/notes/filter/:path*'];
 
 export const config = {
   matcher: ['/profile/:path*', '/notes/:path*', '/notes/filter/:path*', '/sign-in', '/sign-up'],

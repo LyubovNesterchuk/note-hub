@@ -1,6 +1,5 @@
 body {
   font-family: var(--font-roboto), sans-serif;
-  font-family: var(--font-roboto), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;   
   
@@ -8,6 +7,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  background-color: #f8f9fa;
+  background-color: #f4e4c1;
   background: var(--background);
 }

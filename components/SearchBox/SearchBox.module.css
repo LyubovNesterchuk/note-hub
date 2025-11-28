@@ -3,6 +3,19 @@
   max-width: 240px;
   padding: 6px 12px;
   font-size: 16px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  border: 2px solid #8b6f47;
+  border-radius: 0;
+  background-color: #f9f3e8;
+  color: #2c1810;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #5d3a24;
+  box-shadow: 2px 2px 0px rgba(93, 58, 36, 0.3);
+}
+
+.input::placeholder {
+  color: #a89079;
 }

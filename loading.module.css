@@ -1,0 +1,9 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: #5d3a24;
+  font-weight: 600;
+}
