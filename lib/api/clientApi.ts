@@ -82,11 +82,11 @@ type CheckSessionRequest = {
   success: boolean;
 };
 
-
 export const checkSession = async () => {
   const res = await nextServer.get<CheckSessionRequest>('/auth/session');
   return res.data.success;
 };
+
 
 
 export const getMe = async () => {
@@ -99,6 +99,7 @@ export const getMe = async () => {
 export const logout = async (): Promise<void> => {
   await nextServer.post("/auth/logout");
 };
+
 
 
 export type UpdateUserRequest = {
@@ -114,15 +115,23 @@ export const updateMe = async (payload: UpdateUserRequest): Promise<User> => {
 
 
 
+// export const uploadAvatar = async (file: File): Promise<string> => {
+//   const formData = new FormData();
+//   formData.append("avatar", file);
+//   const { data } = await nextServer.patch('/users/me/avatar', formData);
+//   return data.url;
+// };
+
 export const uploadAvatar = async (file: File): Promise<string> => {
   const formData = new FormData();
-  formData.append("avatar", file); // ВАЖЛИВО: той самий ключ, що в upload.single("avatar")
+  formData.append("avatar", file);
 
-  const { data } = await nextServer.patch<{ url: string }>("/users/me/avatar", formData, {
+  const { data } = await nextServer.patch("/users/me/avatar", formData, {
     headers: {
-      // НЕ ставимо manually Content-Type, браузер сам проставить boundary для multipart/form-data
+      "Content-Type": "multipart/form-data",
     },
   });
 
-  return data.url; // це буде user.avatar з бекенда
+  return data.url || data.avatar; 
 };
+

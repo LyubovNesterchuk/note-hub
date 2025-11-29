@@ -55,24 +55,32 @@ export default function EditProfilePage() {
 
   const handleCancel = () => router.push("/profile");
 
-  // 👇 НОВЕ: завантаження аватарки
-  const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+// 👇 Завантаження аватара
+const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
 
-    startTransition(async () => {
-      try {
-        const url = await uploadAvatar(file); // PATCH /users/me/avatar
-        setAvatar(url); // локально оновлюємо
-        // опціонально: оновити юзера в сторі
-        const user = await getMe();
-        if (user) setUser(user);
-      } catch (error) {
-        console.error("Upload avatar error:", error);
+  startTransition(async () => {
+    try {
+      // 1. Завантажуємо файл на бекенд
+      const url = await uploadAvatar(file);
+
+      // 2. Локально змінюємо аватар у компоненті
+      setAvatar(url);
+
+      // 3. Забираємо оновлені дані користувача
+      const freshUser = await getMe();
+
+      // 4. Оновлюємо Zustand (просте встановлення!)
+      if (freshUser) {
+        setUser(freshUser);
       }
-    });
-  };
 
+    } catch (error) {
+      console.error("Upload avatar error:", error);
+    }
+  });
+};
   if (loading) return <p>Loading...</p>;
 
   return (
