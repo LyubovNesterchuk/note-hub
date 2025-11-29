@@ -49,7 +49,8 @@ await queryClient.prefetchQuery({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NotesClient tag={tag ?? ""} />
+      {/* <NotesClient tag={tag ?? ""} /> */}
+<NotesClient tag={tag} />
     </HydrationBoundary>
   );
 }

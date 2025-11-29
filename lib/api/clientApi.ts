@@ -20,10 +20,9 @@ export const fetchNotes = async (
     perPage,
   };
 
-  if (tag && tag !== "all") {
-    params.tag = tag;
-  }
-
+if (tag && tag !== "All") {
+  params.tag = tag;
+}
   const { data } = await nextServer.get<FetchNotesResponse>("/notes", { params });
   return data;
 };

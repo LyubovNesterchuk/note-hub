@@ -25,6 +25,15 @@
   transition: all 0.2s ease;
 }
 
+.select {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
 .input:focus,
 .textarea:focus,
 .select:focus {

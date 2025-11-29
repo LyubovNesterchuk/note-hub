@@ -4,8 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import css from "./TagsMenu.module.css";
 
-const TAGS = ["Work", "Personal", "Meeting", "Shopping", "Todo"];
-// const TAGS = ["Work", "Personal", "Meeting", "Shopping", "Ideas", "Travel", "Finance", "Health","Important", "Todo"];
+// const TAGS = ["Work", "Personal", "Meeting", "Shopping", "Todo"];
+const TAGS = ["Work", "Personal", "Meeting", "Shopping", "Ideas", "Travel", "Finance", "Health","Important", "Todo"];
+
 
 
 export default function TagsMenu() {
