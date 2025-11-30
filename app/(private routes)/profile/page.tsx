@@ -30,7 +30,7 @@ export default async function ProfilePage() {
 
   const username = user?.username ?? "your_username";
   const email = user?.email ?? "your_email@example.com";
-  const avatar = user?.avatar ?? "/default-avatar.png";
+  const avatar = user?.avatar ?? "/default-avatar.jpg";
 
   return (
     <main className={css.mainContent}>
